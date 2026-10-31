@@ -8,7 +8,7 @@ title: 写编程，也写生活
 <figure><img src="/assets/images/desk.webp" alt="窗边的书桌" /><figcaption><span>窗边的书桌，写东西的地方</span><span>插画</span></figcaption></figure></section>
 
 <div class="toolbar" id="articles"><h2>最新文章</h2>
-<div class="pills"><button class="pill" data-filter="all">全部</button><button class="pill" data-filter="code">编程</button><button class="pill" data-filter="life">生活</button></div>
+<div class="pills"><button class="pill" data-filter="all" aria-pressed="true">全部</button><button class="pill" data-filter="code" aria-pressed="false">编程</button><button class="pill" data-filter="life" aria-pressed="false">生活</button></div>
 <label class="search"><input type="search" id="searchInput" placeholder="搜标题或内容…" /></label>
 <p class="count" id="countText">共 {{ site.posts.size }} 篇文章</p></div>
 
@@ -34,7 +34,7 @@ title: 写编程，也写生活
 
 <section class="block" id="archive"><h2>归档</h2><p class="block-intro">按时间倒序，点任意一行打开全文。</p><div id="archiveList">
 {% for post in site.posts %}
-<a class="arch-row" href="{{ post.url }}"><span class="arch-date">{{ post.date | date: "%Y-%m-%d" }}</span><span class="arch-title">{{ post.title }}</span><span class="arch-cat">{{ post.category }}</span><span class="arch-min">{{ post.minutes }}</span></a>
+<a class="arch-row" data-cat="{% if post.category == '编程' %}code{% else %}life{% endif %}" href="{{ post.url }}"><span class="arch-date">{{ post.date | date: "%Y-%m-%d" }}</span><span class="arch-title">{{ post.title }}</span><span class="arch-cat">{{ post.category }}</span><span class="arch-min">{{ post.minutes }}</span></a>
 {% endfor %}
 </div></section>
 
@@ -45,10 +45,17 @@ title: 写编程，也写生活
 
 <script>
 const pills=document.querySelectorAll('.pill');let cat='all';
+const catLabel={all:'',code:'编程 · ',life:'生活 · '};
 function apply(){const q=(document.getElementById('searchInput').value||'').toLowerCase();let n=0;
 document.querySelectorAll('#grid .card').forEach(c=>{const ok=(cat==='all'||c.dataset.cat===cat)&&c.textContent.toLowerCase().includes(q);c.style.display=ok?'':'none';if(ok)n++;});
-document.getElementById('emptyText').hidden=n>0;}
-pills.forEach(b=>b.onclick=()=>{cat=b.dataset.filter;apply();});
+document.querySelectorAll('#archiveList .arch-row').forEach(r=>{r.style.display=(cat==='all'||r.dataset.cat===cat)?'':'none';});
+document.getElementById('emptyText').hidden=n>0;
+document.getElementById('countText').textContent=catLabel[cat]+'共 '+n+' 篇文章';
+pills.forEach(b=>{b.setAttribute('aria-pressed',b.dataset.filter===cat?'true':'false');});
+document.querySelectorAll('.topnav a[data-nav]').forEach(a=>{a.classList.toggle('active',a.dataset.nav===cat);});}
+pills.forEach(b=>b.onclick=()=>{cat=b.dataset.filter;const u2=new URL(location.href);if(cat==='all'){u2.searchParams.delete('cat');}else{u2.searchParams.set('cat',cat);}history.replaceState(null,'',u2);apply();});
 document.getElementById('searchInput').oninput=apply;
-const u=new URL(location.href);if(u.searchParams.get('cat')){cat=u.searchParams.get('cat');apply();}
+const u=new URL(location.href);if(u.searchParams.get('cat')){cat=u.searchParams.get('cat');}
+apply();
+if(location.hash==='#articles'){document.getElementById('articles').scrollIntoView();}
 </script>
