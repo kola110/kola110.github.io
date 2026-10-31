@@ -1,0 +1,13 @@
+title: 代码与日子
+description: 写编程，也写生活的个人博客。
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+defaults:
+  - scope:
+      type: posts
+    values:
+      layout: post
+exclude:
+  - README.md

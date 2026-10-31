@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="color-scheme" content="light dark" />
+<title>{% if page.title %}{{ page.title }} · {% endif %}代码与日子</title>
+<link rel="stylesheet" href="/assets/style.css" />
+</head>
+<body>
+<header class="topbar"><div class="wrap topbar-inner">
+<a class="wordmark" href="/">代码<em>与</em>日子</a>
+<nav class="topnav" aria-label="栏目"><a href="/">全部</a><a href="/?cat=code">编程</a><a href="/?cat=life">生活</a><a href="/#columns">两个栏目</a><a href="/#archive">归档</a></nav>
+</div></header>
+<main><div class="wrap">
+{{ content }}
+</div></main>
+<footer><div class="wrap"><span>代码与日子 · 写编程，也写生活</span><span>2026</span></div></footer>
+</body>
+</html>

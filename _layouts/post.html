@@ -1,0 +1,16 @@
+---
+layout: default
+---
+<div class="reader-bar"><div class="wrap"><a class="back" href="/">← 返回首页</a><span class="crumb">{{ page.category }}</span></div></div>
+<article class="article">
+<span class="kicker">{{ page.category }}</span>
+<h1>{{ page.title }}</h1>
+<p class="meta">{{ page.date | date: "%Y 年 %m 月 %d 日" }}{% if page.minutes %} · {{ page.minutes }}{% endif %}</p>
+{% if page.image %}<figure><img src="{{ page.image }}" alt="" /></figure>{% endif %}
+{{ content }}
+<p class="endmark">◆ ◆ ◆</p>
+</article>
+<nav class="prevnext">
+{% if page.previous %}<a href="{{ page.previous.url }}"><small>← 上一篇</small><strong>{{ page.previous.title }}</strong></a>{% endif %}
+{% if page.next %}<a href="{{ page.next.url }}"><small>下一篇 →</small><strong>{{ page.next.title }}</strong></a>{% endif %}
+</nav>

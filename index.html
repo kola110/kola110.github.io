@@ -1,0 +1,54 @@
+---
+layout: default
+title: 写编程，也写生活
+---
+<section class="hero"><div><h1>写代码，<br />也好好<span class="accent">生活</span>。</h1>
+<p class="lede">这里记两件事：一是编程里想明白的东西——怎么写出读得懂的代码、怎么把 bug 一步步找出来；二是生活里慢下来的时刻——散步、做饭，和一个不被手机打断的清晨。</p>
+<div class="hero-actions"><a class="btn primary" href="#articles">开始阅读</a><a class="btn" href="#about">写在前面</a></div></div>
+<figure><img src="/assets/images/desk.webp" alt="窗边的书桌" /><figcaption><span>窗边的书桌，写东西的地方</span><span>插画</span></figcaption></figure></section>
+
+<div class="toolbar" id="articles"><h2>最新文章</h2>
+<div class="pills"><button class="pill" data-filter="all">全部</button><button class="pill" data-filter="code">编程</button><button class="pill" data-filter="life">生活</button></div>
+<label class="search"><input type="search" id="searchInput" placeholder="搜标题或内容…" /></label>
+<p class="count" id="countText">共 {{ site.posts.size }} 篇文章</p></div>
+
+<div class="grid" id="grid">
+{% for post in site.posts %}
+<article class="card" data-cat="{% if post.category == '编程' %}code{% else %}life{% endif %}">
+<a href="{{ post.url }}">
+{% if post.image %}<span class="thumb"><img src="{{ post.image }}" alt="" loading="lazy" /></span>{% endif %}
+<span class="kicker">{{ post.category }}</span>
+<h3>{{ post.title }}</h3>
+<p>{{ post.excerpt }}</p>
+<span class="meta">{{ post.date | date: "%Y 年 %m 月 %d 日" }}{% if post.minutes %} · {{ post.minutes }}{% endif %}</span>
+</a>
+</article>
+{% endfor %}
+</div>
+<p class="empty" id="emptyText" hidden>没有找到符合条件的文章，换个关键词试试。</p>
+
+<section class="block" id="columns"><h2>两个栏目，各写各的</h2>
+<p class="block-intro">编程写给未来的自己，生活写给现在的自己。两个栏目没有高下，写代码累了就去散步，散步回来再把代码写清楚。</p>
+<div class="columns"><div class="col"><h3><span>01</span> · 编程</h3><p>不追新工具，先把基本功写扎实。每一篇都带一个能直接用的做法。</p></div>
+<div class="col"><h3><span>02</span> · 生活</h3><p>不写宏大叙事，只写具体的日子：一条路、一顿饭、一个清晨。</p></div></div></section>
+
+<section class="block" id="archive"><h2>归档</h2><p class="block-intro">按时间倒序，点任意一行打开全文。</p><div id="archiveList">
+{% for post in site.posts %}
+<a class="arch-row" href="{{ post.url }}"><span class="arch-date">{{ post.date | date: "%Y-%m-%d" }}</span><span class="arch-title">{{ post.title }}</span><span class="arch-cat">{{ post.category }}</span><span class="arch-min">{{ post.minutes }}</span></a>
+{% endfor %}
+</div></section>
+
+<section class="block" id="about"><div class="about"><h2>写在前面</h2><div>
+<p>这个博客从六篇开篇的文章开始：<strong>三篇编程，三篇生活</strong>。它们不是定稿，是第一版——写出来，放在这里，以后一篇篇替换、补充，博客就长成了自己的样子。</p>
+<p>写博客的规矩只有一条：<strong>写具体的东西</strong>。不写“要努力”这种空话，写今天改了哪一行代码、走了哪条路、做了哪道菜。具体，才经得起回看。</p>
+</div></div></section>
+
+<script>
+const pills=document.querySelectorAll('.pill');let cat='all';
+function apply(){const q=(document.getElementById('searchInput').value||'').toLowerCase();let n=0;
+document.querySelectorAll('#grid .card').forEach(c=>{const ok=(cat==='all'||c.dataset.cat===cat)&&c.textContent.toLowerCase().includes(q);c.style.display=ok?'':'none';if(ok)n++;});
+document.getElementById('emptyText').hidden=n>0;}
+pills.forEach(b=>b.onclick=()=>{cat=b.dataset.filter;apply();});
+document.getElementById('searchInput').oninput=apply;
+const u=new URL(location.href);if(u.searchParams.get('cat')){cat=u.searchParams.get('cat');apply();}
+</script>
