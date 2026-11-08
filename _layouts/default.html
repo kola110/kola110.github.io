@@ -5,6 +5,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="color-scheme" content="light dark" />
 <title>{% if page.title %}{{ page.title }} · {% endif %}代码与日子</title>
+<meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}" />
+<link rel="canonical" href="{{ page.url | absolute_url }}" />
+<meta property="og:site_name" content="代码与日子" />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:type" content="{% if page.date %}article{% else %}website{% endif %}" />
+<meta property="og:title" content="{% if page.title %}{{ page.title }} · 代码与日子{% else %}代码与日子{% endif %}" />
+<meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}" />
+<meta property="og:url" content="{{ page.url | absolute_url }}" />
+<meta property="og:image" content="{% if page.image %}{{ page.image | absolute_url }}{% else %}{{ '/assets/images/desk.webp' | absolute_url }}{% endif %}" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="{% if page.title %}{{ page.title }} · 代码与日子{% else %}代码与日子{% endif %}" />
+<meta name="twitter:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}" />
+<meta name="twitter:image" content="{% if page.image %}{{ page.image | absolute_url }}{% else %}{{ '/assets/images/desk.webp' | absolute_url }}{% endif %}" />
+{% if page.date %}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"{{ page.title | escape }}","description":"{{ page.excerpt | strip_html | strip_newlines | truncate: 160 | escape }}","datePublished":"{{ page.date | date_to_xmlschema }}","author":{"@type":"Person","name":"kola110"},"mainEntityOfPage":"{{ page.url | absolute_url }}"}
+</script>
+{% endif %}
 <link rel="stylesheet" href="/assets/style.css" />
 <link rel="stylesheet" href="https://unpkg.com/@waline/client@v3/dist/waline.css" />
 <!-- Google tag (gtag.js) -->
