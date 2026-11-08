@@ -1,5 +1,6 @@
 title: 代码与日子
 description: 写编程，也写生活的个人博客。
+url: https://kola110.github.io
 markdown: kramdown
 kramdown:
   input: GFM
