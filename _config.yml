@@ -15,3 +15,4 @@ exclude:
 permalink: /:year/:month/:day/:title.html
 plugins:
   - jekyll-redirect-from
+  - jekyll-feed

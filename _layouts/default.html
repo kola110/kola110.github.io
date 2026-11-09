@@ -25,6 +25,7 @@
 {% endif %}
 <link rel="stylesheet" href="/assets/style.css" />
 <link rel="stylesheet" href="https://unpkg.com/@waline/client@v3/dist/waline.css" />
+{% feed_meta %}
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XWQT1N1G7Y"></script>
 <script>
@@ -37,7 +38,7 @@
 <body>
 <header class="topbar"><div class="wrap topbar-inner">
 <a class="wordmark" href="/">代码<em>与</em>日子</a>
-<nav class="topnav" aria-label="栏目"><a href="/#articles" data-nav="all">全部</a><a href="/?cat=code#articles" data-nav="code">编程</a><a href="/?cat=life#articles" data-nav="life">生活</a><a href="/#archive">归档</a></nav><span id="google_translate_element" class="translate-widget-hidden"></span>
+<nav class="topnav" aria-label="栏目"><a href="/#articles" data-nav="all">全部</a><a href="/?cat=code#articles" data-nav="code">编程</a><a href="/?cat=life#articles" data-nav="life">生活</a><a href="/#archive">归档</a><a href="/about/">关于</a></nav><span id="google_translate_element" class="translate-widget-hidden"></span>
 <select id="lang-select" class="lang-select notranslate" translate="no" aria-label="选择语言 / Language">
   <option value="" selected>&#127760; Language / 语言</option>
   <option value="zh-CN">中文</option>
@@ -53,7 +54,7 @@
 <main><div class="wrap">
 {{ content }}
 </div></main>
-<footer><div class="wrap"><span>代码与日子 · 写编程，也写生活</span><span>2026</span></div></footer>
+<footer><div class="wrap"><span>代码与日子 · 写编程，也写生活</span><span><a href="/feed.xml">RSS 订阅</a> · <a href="/about/">关于</a></span><span>2026</span></div></footer>
 
 <script>
 function googleTranslateElementInit() {

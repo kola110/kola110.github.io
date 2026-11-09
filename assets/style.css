@@ -176,3 +176,56 @@ body{top:0 !important}
 /* Article-end hook (tech articles only) */
 .hook{border-top:1px solid var(--line);margin-top:32px;padding-top:16px;color:var(--ink-soft);font-size:15px}
 .hook a{text-decoration:underline}
+
+/* Code syntax highlighting (Rouge, GitHub theme) */
+.article .highlight{background:transparent}
+.article pre code{background:transparent;border:0;padding:0}
+.highlight .c,.highlight .cm,.highlight .c1,.highlight .cs{color:#999988;font-style:italic}
+.highlight .cp{color:#999999;font-weight:bold}
+.highlight .err{color:#a61717;background-color:#e3d2d2}
+.highlight .k,.highlight .o,.highlight .kc,.highlight .kd,.highlight .kn,.highlight .kp,.highlight .kr,.highlight .ow{font-weight:bold}
+.highlight .gd{color:#000000;background-color:#ffdddd}
+.highlight .gd .x{color:#000000;background-color:#ffaaaa}
+.highlight .ge{font-style:italic}
+.highlight .gr{color:#aa0000}
+.highlight .gh{color:#999999}
+.highlight .gi{color:#000000;background-color:#ddffdd}
+.highlight .gi .x{color:#000000;background-color:#aaffaa}
+.highlight .go{color:#888888}
+.highlight .gp{color:#555555}
+.highlight .gs{font-weight:bold}
+.highlight .gu{color:#800080;font-weight:bold}
+.highlight .gt{color:#aa0000}
+.highlight .kt{color:#445588;font-weight:bold}
+.highlight .m,.highlight .mf,.highlight .mh,.highlight .mi,.highlight .mo,.highlight .il{color:#009999}
+.highlight .s,.highlight .sb,.highlight .sc,.highlight .sd,.highlight .s2,.highlight .se,.highlight .sh,.highlight .si,.highlight .sx,.highlight .s1{color:#d14}
+.highlight .na{color:#008080}
+.highlight .nb{color:#0086b3}
+.highlight .nc{color:#445588;font-weight:bold}
+.highlight .no{color:#008080}
+.highlight .ni{color:#800080}
+.highlight .ne,.highlight .nf{color:#990000;font-weight:bold}
+.highlight .nn{color:#555555}
+.highlight .nt{color:#000080}
+.highlight .nv,.highlight .vc,.highlight .vg,.highlight .vi{color:#008080}
+.highlight .sr{color:#009926}
+.highlight .ss{color:#990073}
+.highlight .bp{color:#999999}
+.highlight .w{color:#bbbbbb}
+.highlight .gc{color:#999;background-color:#eaf2f5}
+@media (prefers-color-scheme: dark){
+  .highlight .c,.highlight .cm,.highlight .c1,.highlight .cs{color:#8b949e}
+  .highlight .k,.highlight .o,.highlight .kc,.highlight .kd,.highlight .kn,.highlight .kp,.highlight .kr,.highlight .ow{color:#ff7b72}
+  .highlight .kt,.highlight .nc{color:#ffa657}
+  .highlight .m,.highlight .mf,.highlight .mh,.highlight .mi,.highlight .mo,.highlight .il{color:#79c0ff}
+  .highlight .s,.highlight .sb,.highlight .sc,.highlight .sd,.highlight .s2,.highlight .se,.highlight .sh,.highlight .si,.highlight .sx,.highlight .s1{color:#a5d6ff}
+  .highlight .na,.highlight .no,.highlight .nv,.highlight .vc,.highlight .vg,.highlight .vi{color:#79c0ff}
+  .highlight .nb{color:#79c0ff}
+  .highlight .ne,.highlight .nf{color:#d2a8ff}
+  .highlight .nt{color:#7ee787}
+  .highlight .sr{color:#7ee787}
+  .highlight .ss{color:#ff9cac}
+  .highlight .err{color:#ff7b72;background-color:transparent}
+  .highlight .gd{color:#ffdcd7;background-color:transparent}
+  .highlight .gi{color:#aff5b5;background-color:transparent}
+}
