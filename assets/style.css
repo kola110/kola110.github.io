@@ -166,3 +166,11 @@
     html{scroll-behavior:auto}
     *{transition:none !important}
   }
+
+/* Google Translate widget in the topbar */
+.translate-widget{display:inline-flex;align-items:center;margin-left:4px}
+.translate-widget .goog-te-gadget-simple{border:1px solid var(--line);border-radius:999px;padding:5px 10px;font-size:14px;background:transparent}
+.translate-widget .goog-te-gadget-simple .goog-te-menu-value span{color:var(--ink-soft)}
+.translate-widget img{display:none}
+.goog-te-banner-frame.skiptranslate{display:none !important}
+body{top:0 !important}

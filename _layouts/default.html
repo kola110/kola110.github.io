@@ -37,11 +37,18 @@
 <body>
 <header class="topbar"><div class="wrap topbar-inner">
 <a class="wordmark" href="/">代码<em>与</em>日子</a>
-<nav class="topnav" aria-label="栏目"><a href="/#articles" data-nav="all">全部</a><a href="/?cat=code#articles" data-nav="code">编程</a><a href="/?cat=life#articles" data-nav="life">生活</a><a href="/#archive">归档</a></nav>
+<nav class="topnav" aria-label="栏目"><a href="/#articles" data-nav="all">全部</a><a href="/?cat=code#articles" data-nav="code">编程</a><a href="/?cat=life#articles" data-nav="life">生活</a><a href="/#archive">归档</a></nav><span id="google_translate_element" class="translate-widget" title="翻译 / Translate"></span>
 </div></header>
 <main><div class="wrap">
 {{ content }}
 </div></main>
 <footer><div class="wrap"><span>代码与日子 · 写编程，也写生活</span><span>2026</span></div></footer>
+
+<script>
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'zh-CN', includedLanguages: 'en,ja,ko,fr,de,es,ru', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, autoDisplay: false}, 'google_translate_element');
+}
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
