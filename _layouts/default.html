@@ -60,9 +60,24 @@ function googleTranslateElementInit() {
   new google.translate.TranslateElement({pageLanguage: 'zh-CN', includedLanguages: 'en,ja,ko,fr,de,es,ru', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, autoDisplay: false}, 'google_translate_element');
   initLangSelect();
 }
+var LANG_LABELS = {'': '\u{1F310} Language / \u8bed\u8a00', 'zh-CN': '\u4e2d\u6587', 'en': 'English', 'ja': '\u65e5\u672c\u8a9e', 'ko': '\ud55c\uad6d\uc5b4', 'fr': 'Fran\u00e7ais', 'de': 'Deutsch', 'es': 'Espa\u00f1ol', 'ru': '\u0420\u0443\u0441\u0441\u043a\u0438\u0439'};
+function restoreLangLabels() {
+  var sel = document.getElementById('lang-select');
+  if (!sel) return;
+  for (var i = 0; i < sel.options.length; i++) {
+    var o = sel.options[i];
+    var label = LANG_LABELS[o.value];
+    if (label && o.text !== label) o.text = label;
+  }
+}
 function initLangSelect() {
   var sel = document.getElementById('lang-select');
   if (!sel) return;
+  restoreLangLabels();
+  if ('MutationObserver' in window) {
+    var mo = new MutationObserver(function() { restoreLangLabels(); });
+    mo.observe(sel, {childList: true, subtree: true, characterData: true});
+  }
   var m = document.cookie.match(/(?:^|; )googtrans=\/zh-CN\/([a-z-]+)/);
   if (m && m[1]) sel.value = m[1];
   sel.addEventListener('change', function() {
