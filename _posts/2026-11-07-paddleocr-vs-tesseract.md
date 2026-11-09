@@ -2,6 +2,8 @@
 title: "视频 OCR 插件选引擎：PaddleOCR 还是 Tesseract"
 date: 2026-11-07
 category: 编程
+redirect_from:
+  - /编程/2026/11/07/paddleocr-vs-tesseract.html
 excerpt: "PaddleOCR 还是 Tesseract？先看你要认什么字，再看测试集长什么样。"
 minutes: "约 5 分钟"
 ---

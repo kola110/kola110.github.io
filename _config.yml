@@ -12,3 +12,6 @@ defaults:
       layout: post
 exclude:
   - README.md
+permalink: /:year/:month/:day/:title.html
+plugins:
+  - jekyll-redirect-from

@@ -2,6 +2,8 @@
 title: "一顿饭的秩序：先备菜，再开火"
 date: 2026-10-11
 category: 生活
+redirect_from:
+  - /生活/2026/10/11/cooking-order.html
 excerpt: "做饭手忙脚乱，多半不是手艺问题，是顺序问题。备好菜再开火，厨房就从战场变回厨房。"
 image: /assets/images/cooking.webp
 minutes: "约 4 分钟"

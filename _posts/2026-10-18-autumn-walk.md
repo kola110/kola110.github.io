@@ -2,6 +2,8 @@
 title: "秋天的散步路线：慢下来才看得见"
 date: 2026-10-18
 category: 生活
+redirect_from:
+  - /生活/2026/10/18/autumn-walk.html
 excerpt: "同一条路，走快了是通勤，走慢了是观察。落叶、招牌、自行车——秋天把细节都摆在了眼前。"
 image: /assets/images/autumn-walk.webp
 minutes: "约 4 分钟"

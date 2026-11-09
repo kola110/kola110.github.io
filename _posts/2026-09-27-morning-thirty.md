@@ -2,6 +2,8 @@
 title: "晨间三十分钟：不看手机的开始"
 date: 2026-09-27
 category: 生活
+redirect_from:
+  - /生活/2026/09/27/morning-thirty.html
 excerpt: "一天的走向，常常由起床后半小时决定。开窗、喝水、写三行字——把第一个半小时还给自己。"
 minutes: "约 4 分钟"
 ---

@@ -2,6 +2,8 @@
 title: "调试不是运气：从复现开始的五个步骤"
 date: 2026-10-24
 category: 编程
+redirect_from:
+  - /编程/2026/10/24/debugging.html
 excerpt: "先让问题稳定出现，再缩小范围、读懂报错、一次只改一处。调试有流程，就不靠猜。"
 image: /assets/images/debugging.webp
 minutes: "约 5 分钟"

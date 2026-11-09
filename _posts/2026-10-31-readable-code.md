@@ -2,6 +2,8 @@
 title: "写给三个月后的自己：可读的代码长什么样"
 date: 2026-10-31
 category: 编程
+redirect_from:
+  - /编程/2026/10/31/readable-code.html
 excerpt: "代码首先是写给人看的，其次才是给机器执行。名字说清楚、函数只做一件事、注释写“为什么”——三个习惯，让未来的自己少骂几句。"
 image: /assets/images/desk.webp
 minutes: "约 6 分钟"

@@ -2,6 +2,8 @@
 title: "用 AI 赚钱，先从接单开始"
 date: 2026-11-08
 category: 编程
+redirect_from:
+  - /编程/2026/11/08/ai-freelance-first.html
 excerpt: "AI 本身不印钱，它放大你已有的本事。先把手里的技术列成服务，接单是最快见到钱的一步。"
 image: /assets/images/desk.webp
 minutes: "约 5 分钟"
