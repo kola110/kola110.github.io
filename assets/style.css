@@ -167,10 +167,8 @@
     *{transition:none !important}
   }
 
-/* Google Translate widget in the topbar */
-.translate-widget{display:inline-flex;align-items:center;margin-left:4px}
-.translate-widget .goog-te-gadget-simple{border:1px solid var(--line);border-radius:999px;padding:5px 10px;font-size:14px;background:transparent}
-.translate-widget .goog-te-gadget-simple .goog-te-menu-value span{color:var(--ink-soft)}
-.translate-widget img{display:none}
+/* Google Translate: hide Google's own dropdown, use a custom one with native language names */
+.translate-widget-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.lang-select{margin-left:4px;border:1px solid var(--line);border-radius:999px;padding:6px 10px;font-size:14px;background:transparent;color:var(--ink-soft);cursor:pointer;max-width:150px}
 .goog-te-banner-frame.skiptranslate{display:none !important}
 body{top:0 !important}
