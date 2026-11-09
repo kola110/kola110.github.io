@@ -8,6 +8,9 @@ layout: default
 <p class="meta">{{ page.date | date: "%Y 年 %m 月 %d 日" }}{% if page.minutes %} · {{ page.minutes }}{% endif %} · 阅读 <span class="waline-pageview-count" data-path="{{ page.url }}"></span> 次</p>
 {% if page.image %}<figure><img src="{{ page.image }}" alt="" /></figure>{% endif %}
 {{ content }}
+{% if page.category == '编程' %}
+<p class="hook">类似的视频分析需求，可以看看这篇<a href="https://kola110.github.io/2026/11/08/ai-freelance-first.html">《用 AI 赚钱，先从接单开始》</a>里列的三类服务。</p>
+{% endif %}
 <p class="endmark">— 全文完 —</p>
 </article>
 <div id="waline"></div>

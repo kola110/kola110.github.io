@@ -172,3 +172,7 @@
 .lang-select{margin-left:4px;border:1px solid var(--line);border-radius:999px;padding:6px 10px;font-size:14px;background:transparent;color:var(--ink-soft);cursor:pointer;max-width:150px}
 .goog-te-banner-frame.skiptranslate{display:none !important}
 body{top:0 !important}
+
+/* Article-end hook (tech articles only) */
+.hook{border-top:1px solid var(--line);margin-top:32px;padding-top:16px;color:var(--ink-soft);font-size:15px}
+.hook a{text-decoration:underline}
