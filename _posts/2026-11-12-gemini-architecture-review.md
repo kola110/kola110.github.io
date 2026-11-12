@@ -3,6 +3,7 @@ title: "Gemini 4 Carbon 不是免费的：我用免费模型给卡车项目做�
 date: 2026-11-12
 category: 编程
 excerpt: "Carbon 要付费，改用免费的 Flash 做架构评审，评审完当晚就把 ByteTrack 加进了检测脚本。"
+image: /assets/images/gemini-review-cover.webp
 minutes: "约 6 分钟"
 ---
 
